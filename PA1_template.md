@@ -60,7 +60,7 @@ Histogram of the total number of steps taken each day - based on the previously 
 ```r
 plot1 <- ggplot(activity_sum, aes(x = sum_step)) + 
         geom_histogram(color="darkblue", fill="lightblue") +
-        xlab("Steps per day") +
+        xlab("Number of steps") +
         scale_y_continuous(breaks = seq(0, 8, by = 2)) +
         ggtitle("Number of steps per day")
 plot1
@@ -69,7 +69,7 @@ plot1
 ![](PA1_template_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
 
 
-### Calculation of the mean and median of the total number of steps taken per day:
+Calculation of the mean and median of the total number of steps taken per day:
 
 ```r
 activity_summary <- activity_sum %>%
@@ -94,7 +94,7 @@ activity_int <- activity %>% group_by(interval) %>%
         summarise(avg = mean(steps))
 plot2 <- ggplot(activity_int, aes(x = interval, y = avg)) +
         geom_line(color="darkblue") +
-        ylab("Average number of steps") +
+        ylab("Number of steps") +
         ggtitle("Average number of steps per 5-min interval")
 plot2
 ```
@@ -150,14 +150,14 @@ print(activity_summary_noNA)
 ```
 
 
-The mean and median after filling in the missing values are  10766 and 10766, respectively, so they are almost identical to the values previously calculated, when the NAs were ignored. This is the results of the chosen method of missing values calculation, based on the data from the same intervals from the days for which the data was available.  
+The mean and median after filling in the missing values are  10766 and 10766, respectively, so they are almost identical to the values previously calculated, when the NAs were ignored. This is the results of the chosen method of missing values calculation, based on the data from the same intervals from the days for which the data was available.   
 
-### Plotting the the number of steps per day (after filling the missing data)
+Plotting the the number of steps per day (after filling the missing data):
 
 ```r
 plot3 <- ggplot(activity_sum_noNA, aes(x = sum_step)) + 
         geom_histogram(color="darkblue", fill="lightblue") +
-        xlab("Steps per day") +
+        xlab("Number of steps") +
         scale_y_continuous(breaks = seq(0, 8, by = 2)) +
         ggtitle("Number of steps per day")
 plot3
@@ -182,7 +182,7 @@ activity_wk <- activity_noNA %>%
         weekday == "Sunday", "weekend", "weekday"))
 ```
 
-### Calculating and plotting the mean number of steps per interval across all dates
+Calculating and plotting the mean number of steps per interval across all dates:
 
 ```r
 activity_int_wk <- activity_wk %>% group_by(type, interval) %>% 
@@ -193,7 +193,7 @@ activity_int_wk <- activity_wk %>% group_by(type, interval) %>%
 ```r
 plot4 <- ggplot(activity_int_wk, aes(x = interval, y = avg)) +
         geom_line(color="darkblue") +
-        ylab("Average number of steps") +
+        ylab("Number of steps") +
         ggtitle("Average number of steps per 5-min intervals") +
         facet_grid(rows = vars(type))
 plot4
