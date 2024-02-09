@@ -201,4 +201,4 @@ plot4
 
 ![](PA1_template_files/figure-html/unnamed-chunk-15-1.png)<!-- -->
   
-The daily activity patterns between weekdays and weekends are somehow similar, but there are also several differences visible. Activity starts earlier during weekdays than on the weekends and during the weekdays there is a high peak of activity early in the day, which is not visible during the weekends.
+The daily activity patterns between weekdays and weekends are somehow similar, but there are also several differences visible. Activity starts earlier during weekdays than on the weekends and during the weekdays there is a high peak of activity early in the day, which is not visible during the weekends. 
